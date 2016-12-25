@@ -1,0 +1,272 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+
+/* Styling for Navbar*/
+
+#avatar_nav {
+    float: left;
+    position: relative;
+    top: -7px;
+    margin-right: 5px;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 35px;
+    width: 35px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+$bgDefault      : #954AB5;
+$bgHighlight    : #833EA0;
+$colDefault     : #ffffff;
+$colHighlight   : #ecdbff;
+$dropDown       : false;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            > .divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
+
+
+/* Styling for Body */
+
+
+
+body {
+  background-color: #E9E1ED;
+}
+.static-page-header {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.sign-up {
+  text-align: center;
+  color: #444;
+  margin-top: 150px;
+}
+.btn-primary {
+    color: #fff;
+    background-color: $bgDefault;
+    border-color: $bgDefault;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: $bgHighlight;
+    border-color: $bgDefault; 
+}
+.form-control:focus {
+  border-color: $bgDefault;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $bgDefault;
+}
+@media (min-width: 1200px) {
+    .container{
+        max-width: 980px;
+    }
+}
+
+
+/* Styling for Profile Page */
+
+.profile_header {
+      margin-top: 0px;
+      margin-bottom: -11px;
+}
+.profile_header_inner {
+      padding: 15px;      // 15 is the default
+}
+.profile_box_avatar {
+}
+.profile_box_info {
+}
+.profile_box_post {
+    margin-top: 10px;
+    margin-bottom: -26px;
+}
+@media screen and (min-width: 992px) {
+    div.orange {
+    }
+}
+.profile_avatar {
+    margin-right: 0px;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.profile_name {
+}
+.profile_username {
+  opacity: 0.9;
+}
+.profile_points {
+  background-color: $bgDefault;
+    
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+/* Styling for Post Form for Profile Header*/
+
+.profile_post {
+  //  background-color: #F5F2F7;
+  //  border: 0px solid #d9d9d9;
+  //  padding: 10px 10px 0px 10px;
+}
+.profile_post_field {
+}
+.profile_post_button {
+    float: right;
+    margin-top: 2px;
+}
+
+/* Styling for Post Form */
+
+.post-form-panel {
+    margin-bottom: 0px;
+}
+.avatar_post_form {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 35px;
+    width: 35px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+.post-form-button {
+    float: right;
+    margin-top: 3px;
+}
+
+/* Styling for Published Post */
+
+.heading {
+    padding-top: 6px;
+    padding-bottom: 5px;
+}
+
+.panel-default > .panel-heading {
+  color: #333;
+  background-color: #f5f5f5;
+  border-color: #ddd;
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0;
+  margin-bottom: -3px;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 18px solid #F5F5F5;
+}
+
+.post-panel {
+    margin-top: 0px;
+}
+.avatar_post {
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    margin-right: 15px;
+}
+.post-title {
+    text-align: left;
+}
+.post-owner {
+    color: black;
+    font-weight: bold;
+}
+.post-creation {
+    float: right;
+    opacity: 0.9;
+}
+.post-content {
+    text-align: left;
+}

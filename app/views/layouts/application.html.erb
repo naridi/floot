@@ -5,10 +5,18 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="http://icons.veryicon.com/ico/System/Multipurpose%20Alphabet/Letter%20F%20pink.ico">
+  <!-- need to add pics <link rel="icon" type="image/png" href="/path/to/icons/favicon-192x192.png" sizes="192x192">
+  <link rel="apple-touch-icon" sizes="180x180" href="/path/to/icons/apple-touch-icon-180x180.png"> -->
 </head>
 <body>
-
-<%= yield %>
+<%= render '/layouts/nav' %>
+<div class="container">
+  <span class="notice"><%= notice %></span>
+  <span class="alert"><%= alert %></span>
+  <%= yield %>
+</div>
 
 </body>
 </html>
