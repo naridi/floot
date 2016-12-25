@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+# Devise
+gem 'devise'
 # For Bootstrap UI components
 gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
