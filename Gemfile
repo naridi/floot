@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 
+# For uploading avatars
+gem 'paperclip', '~> 4.1'
 # Devise
 gem 'devise'
 # For Bootstrap UI components

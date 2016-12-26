@@ -1,0 +1,12 @@
+<% if user_signed_in? %>
+  <div class="profile_post">
+    <div class="row">
+        <%= form_for(@newPost) do |f| %>
+              <div class="col-xs-12 profile_post_field">
+                <%= f.text_area :content, rows: 3, :placeholder => 'What’s on your mind?', autofocus: true, class: "form-control" %>
+                <span type="button" class="btn btn-submit profile_post_button"><%= f.submit "Post", class: "btn btn-primary" %></span>
+              </div>
+        <% end %>
+    </div>
+  </div>
+<% end %>

@@ -1,2 +1,71 @@
-<h1>Pages#profile</h1>
-<p>Find me in app/views/pages/profile.html.erb</p>
+<div class="row">
+    <div class="col-md-offset-0 col-md-12 col-sm-12 col-xs-12 profile_header">
+        <div class="panel panel-default">
+            <div class="panel-body profile_header_inner">
+                <div class="row">
+
+                <% for user in @users %>
+                    <div class="col-md-3 col-sm-3 col-xs-5 profile_box_avatar">
+                        <%= image_tag(user.avatar.url(:medium), :class => "profile_avatar") %>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-7 profile_box_info">
+                        <h2 class="profile_name"><%= user.name %></h2>
+                        <h5><span class="label label-default profile_points"><%= user.posts.count %> Floot Points</span></h5>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12 profile_box_post">
+                        <% if current_user == user %><%= render '/components/post_form_profile' %><br><% end %>
+                    </div>
+                <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- row 2 -->
+<div class="row">
+     <!-- <div class="col-xs-3 col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                Yo
+            </div>
+        </div>
+    </div> -->
+    <div class="col-xs-12 col-md-9 col-centered">
+        
+        <%# for user in @users %>
+            <%# if current_user == user %>
+                <%#= render '/components/post_form' %><br>
+            <%# end %>
+        <%# end %>
+        
+        <% if @posts.each do |p| %>
+        <div class="arrow-up"></div>
+        <div class="panel panel-default post-panel">
+            <div class="panel-heading heading">
+                <%= image_tag(p.user.avatar.url(:thumb), :class => "avatar_post") %>
+                <span class="post-title"><span class="post-owner"><a href="/<%= User.find(p.user_id).username %>"><%= User.find(p.user_id).name %></a></span>
+                <span class="post-creation"><%= time_ago_in_words(p.created_at).gsub('about','') + ' ago' %></span></span>
+            </div>
+            <div class="panel-body">
+                <div class="col-sm-12">
+                    <p class="post-content"><%= p.content %></p>
+                    <% if current_user == p.user %><%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure you want to delete this?' } %><% end %>
+                </div>
+            </div>
+        </div>
+        <% end.empty? %>
+            <div class="alert alert-empty" role="alert">
+                <% for user in @users %><%= user.name %><% end %> has not posted any Floots in the past 24 hours.
+            </div>
+        <% end %>
+    </div>
+    
+    <!-- <div class="col-xs-3 col-md-3">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>who to follow</p>
+            </div>
+        </div>
+    </div> -->
+</div>

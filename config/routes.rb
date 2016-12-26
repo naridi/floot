@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
   
   devise_for :users
+  resources :posts
+  
   # Define Root URL
   root 'pages#index'
 
   # Define Routes for Pages
   get '/home' => 'pages#home'
   get '/explore' => 'pages#explore'
-  get '/profile' => 'pages#profile'
+  get '/:id' => 'pages#profile'
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
