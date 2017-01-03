@@ -11,13 +11,12 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/path/to/icons/apple-touch-icon-180x180.png"> -->
 </head>
 <body>
-<%= render '/layouts/nav' %>
-
-<div class="container">
-  <span class="notice"><%= notice %></span> <!-- Devise message -->
-  <span class="alert"><%= alert %></span> <!-- Devise message -->
-  <%= yield %>
-</div>
+  
+  <%= render '/layouts/nav' %>
+  <div class="container">
+    <%= flash_messages %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>

@@ -1,5 +1,6 @@
+<!-- Row 1: Profile Header -->
 <div class="row">
-    <div class="col-md-offset-0 col-md-12 col-sm-12 col-xs-12 profile_header">
+    <div class="col-xs-12 col-sm-12 col-md-12 profile_header">
         <div class="panel panel-default">
             <div class="panel-body profile_header_inner">
                 <div class="row">
@@ -22,50 +23,38 @@
     </div>
 </div>
 
-<!-- row 2 -->
+<!-- Row 2: Floots -->
 <div class="row">
-     <!-- <div class="col-xs-3 col-md-3">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                Yo
-            </div>
-        </div>
-    </div> -->
-    <div class="col-xs-12 col-md-9 col-centered">
-        
-        <%# for user in @users %>
-            <%# if current_user == user %>
-                <%#= render '/components/post_form' %><br>
-            <%# end %>
-        <%# end %>
+    <div class="col-xs-11 col-md-9 col-centered post-col">
         
         <% if @posts.each do |p| %>
-        <div class="arrow-up"></div>
+        <div class="arrow-left"></div>
         <div class="panel panel-default post-panel">
-            <div class="panel-heading heading">
-                <%= image_tag(p.user.avatar.url(:thumb), :class => "avatar_post") %>
-                <span class="post-title"><span class="post-owner"><a href="/<%= User.find(p.user_id).username %>"><%= User.find(p.user_id).name %></a></span>
-                <span class="post-creation"><%= time_ago_in_words(p.created_at).gsub('about','') + ' ago' %></span></span>
+            <div class="panel-heading post-heading">
+                <%= image_tag(p.user.avatar.url(:thumb), :class => "avatar-post") %>
+                <span class="post-owner"><a href="/<%= User.find(p.user_id).username %>"><%= User.find(p.user_id).name %></a></span>
+                <% if current_user == p.user %>
+                    <span class="btn-group post-settings">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right post-settings-dropdown">
+                            <li><%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure you want to delete this?' } %></li>
+                            <li><a class="tweet" href="javascript:tweetCurrentPage()" target="_blank" alt="Share on Twitter">Tweet</a></li>
+                        </ul>
+                    </span>
+                <% end %>
+                <span class="post-creation"><%= time_ago_in_words(p.created_at).gsub('about','') + ' ago' %></span>
             </div>
-            <div class="panel-body">
-                <div class="col-sm-12">
-                    <p class="post-content"><%= p.content %></p>
-                    <% if current_user == p.user %><%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure you want to delete this?' } %><% end %>
-                </div>
+            <div class="panel-body post-body">
+                <p class="post-content"><%= auto_link(p.content, :html => { :target => '_blank' }) %></p>
             </div>
         </div>
         <% end.empty? %>
-            <div class="alert alert-empty" role="alert">
+            <div class="alert alert-info" role="alert">
                 <% for user in @users %><%= user.name %><% end %> has not posted any Floots in the past 24 hours.
             </div>
         <% end %>
+        
     </div>
-    
-    <!-- <div class="col-xs-3 col-md-3">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <p>who to follow</p>
-            </div>
-        </div>
-    </div> -->
 </div>

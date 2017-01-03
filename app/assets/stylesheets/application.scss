@@ -15,7 +15,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
 /* Styling for Navbar*/
 
 #avatar_nav {
@@ -106,8 +105,6 @@ $dropDown       : false;
 
 /* Styling for Body */
 
-
-
 body {
   background-color: #E9E1ED;
 }
@@ -130,6 +127,11 @@ body {
     background-color: $bgHighlight;
     border-color: $bgDefault; 
 }
+.btn-primary:active:focus {
+    color: #fff;
+    background-color: #5b2b70;
+    border-color: $bgDefault; 
+}
 .form-control:focus {
   border-color: $bgDefault;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $bgDefault;
@@ -139,24 +141,33 @@ body {
         max-width: 980px;
     }
 }
-
+a:link {
+  color: #9414cc;
+}
+a:visited {
+  color: #9414cc;
+}
+a:hover {
+  color: #62018e;
+}
+a:active {
+  color: #b71eff;
+}
 
 /* Styling for Profile Page */
 
 .profile_header {
-      margin-top: 0px;
-      margin-bottom: -11px;
 }
 .profile_header_inner {
-      padding: 15px;      // 15 is the default
+  padding: 15px;
 }
 .profile_box_avatar {
 }
 .profile_box_info {
 }
 .profile_box_post {
-    margin-top: 10px;
-    margin-bottom: -26px;
+  margin-top: 10px;
+  margin-bottom: -26px;
 }
 @media screen and (min-width: 992px) {
     div.orange {
@@ -179,26 +190,29 @@ body {
 }
 .profile_points {
   background-color: $bgDefault;
-    
 }
 .col-centered{
     float: none;
     margin: 0 auto;
 }
 
+
 /* Styling for Post Form for Profile Header*/
 
 .profile_post {
-  //  background-color: #F5F2F7;
-  //  border: 0px solid #d9d9d9;
-  //  padding: 10px 10px 0px 10px;
 }
 .profile_post_field {
+}
+.countdown {
+  float: right;
+  margin-top: 17px;
+  opacity: 0.6;
 }
 .profile_post_button {
     float: right;
     margin-top: 2px;
 }
+
 
 /* Styling for Post Form */
 
@@ -222,42 +236,46 @@ body {
     margin-top: 3px;
 }
 
+
 /* Styling for Published Post */
 
-.heading {
-    padding-top: 6px;
-    padding-bottom: 5px;
+.post-col {
+  right: 0px;
 }
-
+.arrow-left {
+  position: absolute;
+  left: 1px;
+  margin-top: 1px;
+  width: 0;
+  height: 0;
+  border-right: 15px solid #ffffff;
+  border-bottom: 21px solid transparent;
+  border-top: 0px solid transparent;
+}
 .panel-default > .panel-heading {
   color: #333;
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   border-color: #ddd;
 }
-
-.arrow-up {
-  width: 0; 
-  height: 0;
-  margin-bottom: -3px;
-  border-left: 16px solid transparent;
-  border-right: 16px solid transparent;
-  border-bottom: 18px solid #F5F5F5;
-}
-
 .post-panel {
     margin-top: 0px;
+    border-radius: 0px 16px 16px 16px;
 }
-.avatar_post {
+.post-heading {
+    padding-top: 6px;
+    padding-bottom: 4px;
+    border-radius: 0px 16px 0px 0px
+}
+.avatar-post {
     border: 1px solid #d9d9d9;
     border-radius: 50%;
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     height: 25px;
     width: 25px;
-    margin-right: 15px;
-}
-.post-title {
-    text-align: left;
+    margin-left: 3px;
+    margin-top: -1px;
+    margin-right: 6px;
 }
 .post-owner {
     color: black;
@@ -267,6 +285,18 @@ body {
     float: right;
     opacity: 0.9;
 }
+.post-settings{
+    float: right;
+    margin-left: 10px;
+}
+.post-settings-dropdown {
+    min-width: 100%;
+}
+.post-body {
+  padding-left: 21px;
+  padding-right: 21px;
+}
 .post-content {
-    text-align: left;
+  text-align: left;
+  word-wrap: break-word;
 }

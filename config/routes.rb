@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  devise_for :users
+  devise_for :users, controllers: {registrations: 'registrations'}
   resources :posts
   
   # Define Root URL
@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # Define Routes for Pages
   get '/home' => 'pages#home'
   get '/explore' => 'pages#explore'
+  get '/privacy' => 'pages#privacy'
   get '/:id' => 'pages#profile'
   
   # The priority is based upon order of creation: first created -> highest priority.

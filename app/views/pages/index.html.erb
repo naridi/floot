@@ -63,6 +63,6 @@
 
 <% else # if the user IS signed in, render the following %>
 
-    <script>document.location = "/home"</script>
+    <script>document.location = "/<%= current_user.username %>"</script>
 
 <% end %>

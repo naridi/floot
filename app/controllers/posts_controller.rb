@@ -10,26 +10,26 @@ class PostsController < ApplicationController
     
     def create
         @post = Post.new(post_params)
-        @post.user_id = current_user.id # assign the post to the user who created it.
+        @post.user_id = current_user.id # Assign post to the user who created it.
         respond_to do |f|
             if (@post.save) 
-                f.html { redirect_to "", notice: "Post created!" }
+                f.html { redirect_to :back, :flash => { :success => "Posted! Your floot will disappear in 24 hours" } }
             else
-                f.html { redirect_to "", notice: "Error: Post Not Saved." }
+                f.html { redirect_to :back, :flash => { :error => "Error: Post not saved." } }
             end
         end
     end
     
-    def destroy # delete post but its not working
+    def destroy # Allow post owner to delete post
         @post = Post.find(params[:id])
         if current_user == @post.user
             @post.destroy
         end
-            redirect_to root_path
+            redirect_to :back, alert: 'Floot has been deleted.'
     end
     
     private
-    def post_params # allows certain data to be passed via form.
+    def post_params # Allow certain data to be passed through form
         params.require(:post).permit(:user_id, :content)
         
     end
