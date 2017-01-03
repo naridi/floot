@@ -1,5 +1,6 @@
 module ApplicationHelper
     
+    # For bootstrap flash alerts
     def bootstrap_class_for flash_type
         { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-info" }[flash_type.to_sym] || flash_type.to_s
     end
@@ -11,6 +12,20 @@ module ApplicationHelper
             end)
         end
         nil
+    end
+    
+    # For sign up form on homepage
+    def resource_name
+      :user
+    end
+    def resource_class 
+       User 
+    end
+    def resource
+      @resource ||= User.new
+    end
+    def devise_mapping
+      @devise_mapping ||= Devise.mappings[:user]
     end
   
 end

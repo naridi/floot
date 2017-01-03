@@ -1,65 +1,103 @@
 <% if !user_signed_in? # if the user is not signed in, render this %>
+
     <style>
         body {
             background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
                 rgba(0,0,0, 0.4),
                 rgba(0,0,0, 0.4)
-                ), url("/background.png") no-repeat center center fixed
-            
-            ; /* only display once, center horizontal and vertical, dont let scroll change position. */
+                ), url("/background.png") no-repeat center center fixed; /* only display once, center horizontal and vertical, dont let scroll change position. */
             -webkit-background-size: cover;
             -moz-background-size: cover; /* cover the whole html element. */
             -o-background-size: cover;
             background-size: cover;
         }
-        h1 {
+        .row{
+            overflow: hidden; 
+        }
+        [class*="col-"]{
+            margin-bottom: -99999px;
+            padding-bottom: 99999px;
+
+        }
+        .home-panel {
+            margin-top: 9%;
+        }
+        .home-left {
+            background-color: rgba(230, 147, 255, .6);
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 50px;
             color: white;
-            font-weight: bold;
         }
-        .container-index {
-            margin-right: 15%;
-            margin-left: 15%;
+        .home-right {
+            background-color: white;
+            padding-left: 35px;
+            padding-right: 35px;
         }
-        .text {
+        .home-text {
             color: white;
-            font-weight: 300;
-            font-size: 150%;
-        }
-        .landing-buttons {
-            float: center;
-            margin-top: 7.5%;
-        }
-        .log-in-form {
-            margin: 5px;
+            padding-left: 35px;
+            padding-right: 35px;
         }
         .footer-links {
             text-align: center;
             color: white;
-            margin-top: 30%;
+            margin-top: 5%;
             font-size: 75%;
         }
     </style>
     
-    <div class="container-index row">
-        <div class="col-sm-12">
-            <h1>Welcome to Floot.</h1>
-            <p class="text">
-                Your 24 hour disappearing public feed.<br>
-            </p>
-        </div>
-        <div class="col-sm-12">
-                   <div class="landing-buttons">
-                       <p>
-                           <button type="button" class="btn btn-default">Reserve my username.</button>
-                      </p>
-                    </div> 
-        </div>
+    <div class="row">
+        <div class="col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10 home-panel">
 
-        <div class="col-sm-12">
-            <p class="footer-links">About Terms  Privacy Contact © 2016 Floot, Inc.</p>
-        </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 home-left">
+                <center>
+                <h2>Floot is your daily disappearing public feed.</h2><br />
+                <h3>Your thoughts come and go, so should your social media.</h3>
+                </center>    
+                <br />
+                <br />
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 home-right">
+                
+                <div class="text-center">
+                <h3>Reserve your username.</h3><br />
+
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+
+                    <div class="form-group">
+                         <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
+                    </div>
+                    
+                    <div class="form-group input-group">
+                    <span class="input-group-addon" id="basic-addon3">floot.cc/</span>
+                      <%= f.text_field :username, placeholder: "Username", class: "form-control", id: "basic-url" %>
+                    </div>
         
+                    <div class="form-group">
+                      <%= f.email_field :email, placeholder: "Email", class: "form-control" %>
+                    </div>
+                  
+                    <div class="form-group">
+                      <%= f.password_field :password, placeholder: "Password", class: "form-control", autocomplete: "off" %>
+                    </div>
+                    
+                    <div class="actions">
+                      <%= f.submit "Create", class: "btn btn-primary form-control" %>
+                    </div>
+                    <% end %>
+                    <br />Already have an account? <%= link_to('Login', new_user_session_path)  %><br /><br />
+                </div>
+                
+            </div>
+    
+        </div>
+      </div>
     </div>
+    <br />
+
+    <p class="footer-links"><a href="/privacy">Privacy</a> © 2017 Floot</p>
 
 <% else # if the user IS signed in, render the following %>
 
