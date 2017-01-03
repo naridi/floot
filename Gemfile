@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.3'
 
 
+# Avatars upload to AWS. Important: Paperclip only works <v2
+gem 'aws-sdk', '< 2.0'
 # For converting text links to clickable links
 gem 'rails_autolink'
 # For uploading avatars
