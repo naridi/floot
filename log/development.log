@@ -8403,3 +8403,42 @@ Completed 200 OK in 168ms (Views: 166.7ms | ActiveRecord: 0.0ms)
 
 Started GET "/assets/application.self-068ddf26441ecc41a85723b97b6d14d6743b769b11d3f0d7c0752f084e24666d.js?body=1" for 63.88.70.247 at 2017-01-03 19:38:22 +0000
 Cannot render console from 63.88.70.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/" for 63.88.70.247 at 2017-01-03 19:43:36 +0000
+Cannot render console from 63.88.70.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (9.6ms)
+  Rendered layouts/_nav_guest.html.erb (0.4ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 196ms (Views: 194.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-5cbdf6a21ee61d7cd8973b4ab1cabf30d1f91e4055560461f1bb4f98936204a5.js?body=1" for 63.88.70.247 at 2017-01-03 19:43:36 +0000
+Cannot render console from 63.88.70.247! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:User> at /home/ubuntu/workspace/app/models/user.rb:15)
+
+
+Started GET "/" for 108.4.7.221 at 2017-01-03 22:29:37 +0000
+Cannot render console from 108.4.7.221! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (67.5ms)
+  Rendered layouts/_nav_guest.html.erb (0.7ms)
+  Rendered layouts/_nav.html.erb (3.4ms)
+Completed 200 OK in 729ms (Views: 707.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/application.self-5cbdf6a21ee61d7cd8973b4ab1cabf30d1f91e4055560461f1bb4f98936204a5.js?body=1" for 108.4.7.221 at 2017-01-03 22:29:38 +0000
+Cannot render console from 108.4.7.221! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+DEPRECATION WARNING: [paperclip] [deprecation] AWS SDK v1 has been deprecated in paperclip 5. Please consider upgrading to AWS 2 before upgrading paperclip. (called from <class:User> at /home/ubuntu/workspace/app/models/user.rb:15)
+
+
+Started GET "/" for 108.4.7.221 at 2017-01-04 00:16:45 +0000
+Cannot render console from 108.4.7.221! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PagesController#index as HTML
+  Rendered pages/index.html.erb within layouts/application (57.6ms)
+  Rendered layouts/_nav_guest.html.erb (0.6ms)
+  Rendered layouts/_nav.html.erb (2.0ms)
+Completed 200 OK in 522ms (Views: 499.8ms | ActiveRecord: 3.3ms)
