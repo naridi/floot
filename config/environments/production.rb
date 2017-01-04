@@ -89,14 +89,14 @@ Rails.application.configure do
   }
   
   # For SendGrid emails
-  config.action_mailer.default_url_options = { :host => 'floot.cc' }
+  config.action_mailer.default_url_options = { :host => 'www.floot.cc' }
   ActionMailer::Base.smtp_settings = {
   :address        => "smtp.sendgrid.net",
   :port           => "25",
   :authentication => :plain,
   :user_name      => ENV['SENDGRID_USERNAME'],
   :password       => ENV['SENDGRID_PASSWORD'],
-  :domain         => ENV['SENDGRID_DOMAIN']
+  :domain         => ENV['SENDGRID_DOMAIN'],
 }
   
 end
