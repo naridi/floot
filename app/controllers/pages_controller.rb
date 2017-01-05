@@ -16,7 +16,7 @@ class PagesController < ApplicationController
   end 
   
   def profile
-    if (User.find_by_username(params[:id])) # grab the username from the URL as :id
+    if (User.find_by_username(params[:id]))
       @username = params[:id]
       @users = User.all.where("id = ?", User.find_by_username(params[:id]).id)
       @posts = Post.where(user_id: User.find_by_username(params[:id]).id).where('created_at > ?', 1.days.ago)

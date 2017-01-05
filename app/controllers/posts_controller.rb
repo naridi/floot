@@ -20,7 +20,7 @@ class PostsController < ApplicationController
         end
     end
     
-    def destroy # Allow post owner to delete post
+    def destroy # Allow post owner to delete post.
         @post = Post.find(params[:id])
         if current_user == @post.user
             @post.destroy
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     end
     
     private
-    def post_params # Allow certain data to be passed through form
+    def post_params # Allow certain data to be passed through form.
         params.require(:post).permit(:user_id, :content)
         
     end

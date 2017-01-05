@@ -19,5 +19,5 @@
 
 // Share on twitter script
 function tweetCurrentPage()
-{ window.open("https://twitter.com/share?url="+escape(window.location.href)+"&text= I just posted on %23floot. Read my post before it disappears."+'', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false; }
+{ window.open("https://twitter.com/share?url="+escape(window.location.href)+"&text= I just posted on %23Floot. Read before it disappears."+'', '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false; }
 
