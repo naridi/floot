@@ -26,13 +26,17 @@
             background-color: rgba(230, 147, 255, .6);
             padding-left: 20px;
             padding-right: 20px;
-            padding-top: 50px;
+            padding-top: 26px;
             color: white;
         }
         .home-right {
             background-color: white;
             padding-left: 35px;
             padding-right: 35px;
+        }
+        .home-right-form {
+            padding-left: 15px;
+            padding-right: 15px;
         }
         .home-text {
             color: white;
@@ -45,6 +49,74 @@
             margin-top: 5%;
             font-size: 75%;
         }
+        
+        /* Styling for Index */
+        
+        .home-animation {
+          height: 230px;
+        }
+        #slides span {
+          display: none;
+          position: relative;
+        }
+        #slides {
+          position: relative;
+          top: 120px;
+        }
+        .slide-post {
+            position: absolute;
+            left: -10px;
+        }
+        .slide-avatar {
+            position: absolute;
+        }
+        .slide-avatar-circle {
+            border: 1px solid #d9d9d9;
+            border-radius: 50%;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            height: 55px;
+            width: 55px;
+            margin-left: 3px;
+            margin-top: -1px;
+            margin-right: 6px;
+        }
+        .slide-arrow {
+          position: absolute;
+          left: 60px;
+          top: 5px;
+          border-right: 15px solid #ffffff;
+          border-bottom: 21px solid transparent;
+          border-top: 0px solid transparent;
+        }
+        .slide-panel {
+            position: absolute;
+            width: 250px;
+            top: 5px;
+            left: 72px;
+            padding:  14px 15px 19px 15px;
+            background-color: white;
+            border: 0px solid white;
+            border-radius: 0px 10px 10px 10px;
+        }
+        .slide-owner {
+            display: inline-block;
+            color: black;
+            font-weight: bold;
+        }
+        .slide-date {
+            display: inline-block;
+            color: black;
+            float: right;
+            opacity: 0.7;
+        }
+        .slide-content {
+            color: black;
+            text-align: left;
+            font-size: 14.5px;
+            word-wrap: break-word;
+            margin-top: 9px;
+        }
     </style>
     
     <div class="row">
@@ -52,11 +124,86 @@
 
             <div class="col-xs-12 col-sm-6 col-md-6 home-left">
                 <center>
-                <h2>Floot is your daily disappearing public feed.</h2><br />
-                <h3>Your thoughts come and go, so should your social media.</h3>
+                <h2>Floot is your daily disappearing public feed.</h2>
                 </center>    
-                <br />
-                <br />
+                
+                <div class="home-animation">
+                    <span id="slides">
+                        
+                     <span id="slide1">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="http://floot-aws.s3.amazonaws.com/users/avatars/000/000/005/thumb/nibal.jpg" class="slide-avatar-circle" >
+                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="http://floot.cc/nibal">Nibal</a></div>
+                                <div class="slide-date">Just now</div>
+                                <div class="slide-content">Your thoughts come and go, so should your social media.</div>
+                            </div>
+                        </div>
+                      </span>
+
+                     <span id="slide2">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="https://s-media-cache-ak0.pinimg.com/236x/27/73/8b/27738b3e152b6ba412535ed24efffd3f.jpg" class="slide-avatar-circle" >
+                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="http://floot.cc/">Jessica</a></div>
+                                <div class="slide-date">less than a minutes ago</div>
+                                <div class="slide-content">Your posts on Floot disappear every 16 hours... just like this 😉</div>
+                            </div>
+                        </div>
+                      </span>
+                      
+                      <span id="slide3">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="http://i2.kym-cdn.com/entries/icons/square/000/007/539/collegesenior.PNG" class="slide-avatar-circle" >
+                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="http://floot.cc/sandra">Tim</a></div>
+                                <div class="slide-date">2 minutes ago</div>
+                                <div class="slide-content">Nothing better than being back home for break!</div>
+                            </div>
+                        </div>
+                      </span>
+                      
+                      <span id="slide4">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="http://floot-aws.s3.amazonaws.com/users/avatars/000/000/003/thumb/sandra.jpg" class="slide-avatar-circle" >                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="http://floot.cc/sandra">Sandra</a></div>
+                                <div class="slide-date">4 minutes ago</div>
+                                <div class="slide-content">Putting up xmas decor ✅  vs. Taking down xmas decor ❌</div>
+                            </div>
+                        </div>
+                      </span>
+                      
+                    </span>
+                </div>
+                
+                <script>
+                    runslide();
+                    function runslide() {
+                      $('#slide1,#slide2,#slide3,#slide4').css({top: 0})
+                      $('#slide1').delay(1600).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(6500).fadeOut(1600, function() {       			
+                     		$('#slide2').delay(1700).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
+                           		$('#slide3').delay(1500).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
+                           		    $('#slide4').delay(1500).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
+                                    runslide();
+                           		    });
+                                });
+                            });
+                        });
+                    }
+                </script>
+                
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 home-right">
                 
@@ -66,6 +213,8 @@
                 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
                 <%= devise_error_messages! %>
 
+                <div class="home-right-form">
+                    
                     <div class="form-group">
                          <%= f.text_field :name, placeholder: "Name", class: "form-control" %>
                     </div>
@@ -89,7 +238,7 @@
                     <% end %>
                     <br />Already have an account? <%= link_to('Login', new_user_session_path)  %><br /><br />
                 </div>
-                
+                </div>
             </div>
     
         </div>
