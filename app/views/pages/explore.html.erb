@@ -1,10 +1,39 @@
-<% if !user_signed_in? # if the user is not signed in, render this %>
+<div class="row">
     
-    <script>document.location = "/"</script>
+        <div class="col-xs-12 col-sm-12 col-md-10 col-centered">
+            
+        <% if @posts.each do |p| %>
+        
+        <a href="/<%= User.find(p.user_id).username %>"><%= image_tag(p.user.avatar.url(:medium), :class => "explore-post-avatar") %></a>
 
-<% else # if the user IS signed in, render the following %>
+        <div class="panel panel-default explore-post-panel">
+            <div class="explore-arrow-left"></div>
+            <div class="panel-heading post-heading">
+                <span class="post-owner"><a href="/<%= User.find(p.user_id).username %>"><%= User.find(p.user_id).name %></a></span>
+                <% if current_user == p.user %>
+                    <span class="btn-group post-settings">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-xs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-right post-settings-dropdown">
+                            <li><%= link_to 'Delete', p, method: :delete, data: { confirm: 'Are you sure you want to delete this?' } %></li>
+                            <li><a class="tweet" href="javascript:tweetCurrentPage()" target="_blank" alt="Share on Twitter">Tweet</a></li>
+                        </ul>
+                    </span>
+                <% end %>
+                <span class="post-creation"><%= time_ago_in_words(p.created_at).gsub('about','') + ' ago' %></span>
+            </div>
+            <div class="panel-body post-body">
+                <p class="post-content"><%= auto_link(p.content, :html => { :target => '_blank' }) %></p>
+            </div>
+        </div>
+        <% end.empty? %>
+            <div class="alert alert-info text-center" role="alert">
+                No Floots posted in the past 16 hours.
+            </div>
+            
+        <% end %>
 
-    <!--  OLD   <script>document.location = "/home"</script> -->
-    <script>document.location = "/<%= current_user.username %>"</script>
-
-<% end %>
+    </div>
+    
+</div>
