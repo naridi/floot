@@ -270,16 +270,20 @@ a:active {
     margin-right: 6px;
 }
 .post-owner {
-    color: black;
-    font-weight: bold;
+  margin-left: 3px;
+  color: black;
+  font-weight: bold;
 }
 .post-creation {
-    float: right;
-    opacity: 0.9;
+  background-color: $bgDefault;
+  float: right;
+  opacity: 0.9;
+  margin-top: 2px;
 }
 .post-settings{
-    float: right;
-    margin-left: 10px;
+  float: right;
+  margin-left: 11px;
+  margin-right: 3px;
 }
 .post-settings-dropdown {
     min-width: 100%;
@@ -299,12 +303,12 @@ a:active {
 
 .explore-post-avatar {
   position: absolute;
-    border: 1px solid #d9d9d9;
-    border-radius: 50%;
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    max-width: 55px;
-    height: auto;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  max-width: 55px;
+  height: auto;
 }
 .explore-arrow-left {
   position: absolute;
@@ -318,4 +322,35 @@ a:active {
 .explore-post-panel {
   margin-left: 70px;
   border-radius: 0px 16px 16px 16px;
+}
+
+
+/* Styling for Voting */
+
+.post-vote {
+  text-align: center;
+  position: relative;
+  float: right;
+  padding-left: 0px;
+  right: -12px;
+}
+.tooltip {
+  width: 135px;
+}
+.vote-score {
+  text-align: center;
+  font-weight: bold;
+  color: $bgDefault;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.voted {
+  background-color: #d4bee0;
 }

@@ -1,0 +1,48 @@
+<div id="vote_<%= p.id %>" class="vote">
+  <% if !user_signed_in? %> <!-- if user is NOT signed in -->
+  
+    <span class= "btn btn-default btn-circle" data-toggle="tooltip" data-placement="left" title="Login to upvote">
+      <span class="glyphicon glyphicon-chevron-up"></span>
+    </span>
+    <br />
+    <span class="vote-score"><%= p.score %></span>
+    <br />
+    <span class= "btn btn-default btn-circle" data-toggle="tooltip" data-placement="left" title="Login to downvote">
+      <span class="glyphicon glyphicon-chevron-down"></span>
+    </span>
+    <br />
+    
+    <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+    </script>
+    
+  <% else %>  <!-- if user is signed in -->
+
+    <% if current_user.liked? p %>
+      <%=link_to like_post_path(p), method: :put, remote: true, class: 'upvote btn btn-default btn-circle voted', title: 'Upvote' do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      <% end %>
+    <% else %>
+      <%=link_to like_post_path(p), method: :put, remote: true, class: 'upvote btn btn-default btn-circle', title: 'Upvote' do %>
+        <span class="glyphicon glyphicon-chevron-up"></span>
+      <% end %>
+    <% end %>
+    <br />
+    <span class="vote-score"><%= p.score %></span>
+    <br />
+    <% if current_user.disliked? p %>
+      <%=link_to dislike_post_path(p), method: :put, remote: true, class: 'downvote btn btn-default btn-circle voted', title: 'Downvote' do %>
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      <%end%>
+    <% else %>
+      <%=link_to dislike_post_path(p), method: :put, remote: true, class: 'downvote btn btn-default btn-circle', title: 'Downvote' do %>
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      <%end%>
+    <% end %>
+    <br />
+
+<% end %>
+
+</div>

@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 ruby '2.3'
 
 
+# To vote on posts
+gem 'acts_as_votable', '~> 0.10.0'
 # Avatars upload to AWS. Important: Paperclip only works <v2
 gem 'aws-sdk', '< 2.0'
 # For converting text links to clickable links

@@ -28,6 +28,24 @@ class PostsController < ApplicationController
             redirect_to :back, alert: 'Floot has been deleted.'
     end
     
+    def upvote
+      @post = Post.find(params[:id])
+      @post.upvote_by current_user
+        respond_to do |format|
+            format.html { redirect_to :back }
+            format.js 
+        end
+    end
+
+    def downvote
+      @post = Post.find(params[:id])
+      @post.downvote_by current_user
+        respond_to do |format|
+            format.html { redirect_to :back }
+            format.js 
+        end
+    end
+    
     private
     def post_params # Allow certain data to be passed through form.
         params.require(:post).permit(:user_id, :content)

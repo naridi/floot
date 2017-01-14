@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   end
 
   def explore
-    @posts = Post.where('created_at >= :one_days_ago', one_days_ago: Time.now - 16.hours)
+    @posts = Post.where('created_at >= :one_days_ago', one_days_ago: Time.now - 16.hours).last(30)
   end
 
   def privacy
