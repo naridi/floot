@@ -59,7 +59,7 @@
                             </ul>
                         </span>
                     <% end %>
-                    <span class="post-creation label label-default"><span class="glyphicon glyphicon-time"></span> <%= time_ago_in_words(p.created_at).gsub('about','') + ' ago' %></span>
+                    <span class="post-creation label label-default"><span class="glyphicon glyphicon-time"></span> <%= timeago(p.created_at) %></span>
                 </div>
                 <div class="panel-body post-body">
                     <div class="post-vote"><%= render :partial => '/posts/vote', :class => "vote", :locals => { p: p } %></div>

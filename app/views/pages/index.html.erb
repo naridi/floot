@@ -2,12 +2,12 @@
 
     <style>
         body {
-            background: linear-gradient( /* somewhat transparent film on top of the BG to make it look darker. */
+            background: linear-gradient( 
                 rgba(0,0,0, 0.4),
                 rgba(0,0,0, 0.4)
-                ), url("/background.png") no-repeat center center fixed; /* only display once, center horizontal and vertical, dont let scroll change position. */
+                ), url("/background.jpg") no-repeat center center fixed; 
             -webkit-background-size: cover;
-            -moz-background-size: cover; /* cover the whole html element. */
+            -moz-background-size: cover; 
             -o-background-size: cover;
             background-size: cover;
         }
@@ -31,8 +31,8 @@
         }
         .home-right {
             background-color: white;
-            padding-left: 35px;
-            padding-right: 35px;
+            padding-left: 20px;
+            padding-right: 20px;
         }
         .home-right-form {
             padding-left: 15px;
@@ -50,7 +50,7 @@
             font-size: 75%;
         }
         
-        /* Styling for Index */
+        /* Styling for slider */
         
         .home-animation {
           height: 230px;
@@ -61,7 +61,7 @@
         }
         #slides {
           position: relative;
-          top: 120px;
+          top: 110px;
         }
         .slide-post {
             position: absolute;
@@ -106,7 +106,8 @@
         }
         .slide-date {
             display: inline-block;
-            color: black;
+            background-color: #954AB5;
+            color: white;
             float: right;
             opacity: 0.7;
         }
@@ -130,61 +131,146 @@
                 <div class="home-animation">
                     <span id="slides">
                         
-                     <span id="slide1">
+                    <span id="slide1">
                         <div class="slide-post">
                             <div class="slide-avatar">
-                                <img src="http://floot-aws.s3.amazonaws.com/users/avatars/000/000/005/thumb/nibal.jpg" class="slide-avatar-circle" >
+                                <img src="/slide/img1.png" class="slide-avatar-circle" >
                             </div>
                             <div class="slide-arrow"></div>
                             <div class="slide-panel">
-                                <div class="slide-owner"><a href="http://floot.cc/nibal">Nibal</a></div>
-                                <div class="slide-date">Just now</div>
+                                <div class="slide-owner"><a href="#">Nibal</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> Just now</div>
                                 <div class="slide-content">Your thoughts come and go, so should your social media.</div>
                             </div>
                         </div>
-                      </span>
+                    </span>
 
-                     <span id="slide2">
+                    <span id="slide2">
                         <div class="slide-post">
                             <div class="slide-avatar">
-                                <img src="https://s-media-cache-ak0.pinimg.com/236x/27/73/8b/27738b3e152b6ba412535ed24efffd3f.jpg" class="slide-avatar-circle" >
+                                <img src="/slide/img2.png" class="slide-avatar-circle" >
                             </div>
                             <div class="slide-arrow"></div>
                             <div class="slide-panel">
-                                <div class="slide-owner"><a href="http://floot.cc/">Jessica</a></div>
-                                <div class="slide-date">less than a minutes ago</div>
-                                <div class="slide-content">Your posts on Floot disappear every 16 hours... just like this 😉</div>
+                                <div class="slide-owner"><a href="#">Amy</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> less than a minute ago</div>
+                                <div class="slide-content">Your posts on Floot disappear every 16 hours... just like this. 😉</div>
                             </div>
                         </div>
-                      </span>
-                      
-                      <span id="slide3">
+                    </span>
+                    
+                    <span id="slide3">
                         <div class="slide-post">
                             <div class="slide-avatar">
-                                <img src="http://i2.kym-cdn.com/entries/icons/square/000/007/539/collegesenior.PNG" class="slide-avatar-circle" >
+                                <img src="/slide/img3.png" class="slide-avatar-circle" >
                             </div>
                             <div class="slide-arrow"></div>
                             <div class="slide-panel">
-                                <div class="slide-owner"><a href="http://floot.cc/sandra">Tim</a></div>
-                                <div class="slide-date">2 minutes ago</div>
-                                <div class="slide-content">Nothing better than being back home for break!</div>
+                                <div class="slide-owner"><a href="#">John</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> 2 minutes ago</div>
+                                <div class="slide-content">Discover daily influences. Upvote the posts you like, and downvote the stuff you don't. </div>
                             </div>
                         </div>
-                      </span>
-                      
-                      <span id="slide4">
+                    </span>
+                                          
+                    <span id="slide4">
                         <div class="slide-post">
                             <div class="slide-avatar">
-                                <img src="http://floot-aws.s3.amazonaws.com/users/avatars/000/000/003/thumb/sandra.jpg" class="slide-avatar-circle" >                            </div>
+                                <img src="/slide/img4.png" class="slide-avatar-circle" >
+                            </div>
                             <div class="slide-arrow"></div>
                             <div class="slide-panel">
-                                <div class="slide-owner"><a href="http://floot.cc/sandra">Sandra</a></div>
-                                <div class="slide-date">4 minutes ago</div>
-                                <div class="slide-content">Putting up xmas decor ✅  vs. Taking down xmas decor ❌</div>
+                                <div class="slide-owner"><a href="#">Ally</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> 4 minutes ago</div>
+                                <div class="slide-content">I've always wondered how people wake up early and go to the gym. Elite superhumans. </div>
                             </div>
                         </div>
-                      </span>
+                    </span>
                       
+                    <span id="slide5">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="/slide/img5.png" class="slide-avatar-circle" >
+                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="#">Joi</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> 6 minutes ago</div>
+                                <div class="slide-content"> Everything seems hard, until you do it.</div>
+                            </div>
+                        </div>
+                    </span>
+                    
+                    <span id="slide6">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="/slide/img6.png" class="slide-avatar-circle" >
+                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="#">Judy</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> 7 minutes ago</div>
+                                <div class="slide-content">Biggest mystery in life: how the gas pump knows when your tank is full. 🤔 </div>
+                            </div>
+                        </div>
+                    </span>
+                    
+                    <span id="slide7">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="/slide/img7.png" class="slide-avatar-circle" >
+                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="#">Ben</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> 9 minutes ago</div>
+                                <div class="slide-content">Today feels like I'm living in an episode of Black Mirror. </div>
+                            </div>
+                        </div>
+                    </span>
+                    
+                    <span id="slide8">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="/slide/img8.png" class="slide-avatar-circle" >
+                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="#">Candace</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> Just now</div>
+                                <div class="slide-content">Why must hamsters be so cute? </div>
+                            </div>
+                        </div>
+                    </span>
+                    
+                    <span id="slide9">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="/slide/img9.png" class="slide-avatar-circle" >
+                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="#">Travis</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> 2 minutes ago</div>
+                                <div class="slide-content">If you're not having fun then you're not living right. ✌️ </div>
+                            </div>
+                        </div>
+                    </span>
+                    
+                    <span id="slide10">
+                        <div class="slide-post">
+                            <div class="slide-avatar">
+                                <img src="/slide/img10.png" class="slide-avatar-circle" >
+                            </div>
+                            <div class="slide-arrow"></div>
+                            <div class="slide-panel">
+                                <div class="slide-owner"><a href="#">Sandra</a></div>
+                                <div class="slide-date label label-default"><div class="glyphicon glyphicon-time"></div> 5 minutes ago</div>
+                                <div class="slide-content">Putting up xmas decor ✅  vs. Taking down xmas decor ❌ </div>
+                            </div>
+                        </div>
+                    </span>
+                    
                     </span>
                 </div>
                 
@@ -192,18 +278,31 @@
                 jQuery(document).ready(function($) {
                     runslide();
                     function runslide() {
-                      $('#slide1,#slide2,#slide3,#slide4').css({top: 0})
+                      $('#slide1,#slide2,#slide3,#slide4').css({top: 0}) 
                       $('#slide1').delay(1600).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(6500).fadeOut(1600, function() {       			
-                     		$('#slide2').delay(1700).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
-                           		$('#slide3').delay(1500).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
-                           		    $('#slide4').delay(1500).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
-                                    runslide();
+                     	    $('#slide2').delay(1700).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(6000).fadeOut(1600, function() {
+                           		$('#slide3').delay(1600).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(6200).fadeOut(2000, function() {
+                           		    $('#slide4').delay(7000).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
+                           		        $('#slide5').delay(2500).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(7500).fadeOut(1600, function() {
+                           		            $('#slide6').delay(2000).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
+                           		                $('#slide7').delay(4500).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
+                           		                    $('#slide8').delay(1500).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
+                           		                         $('#slide9').delay(3500).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
+                           		                            $('#slide10').delay(2500).fadeIn({queue: true, duration: 'slow'}).animate({ top: "-70px" }, 'slow').delay(5500).fadeOut(1600, function() {
+                                                            runslide();
+                           		                            });    
+                           		                        });
+                           		                    });
+                           		                });
+                           		            });
+                           		        });
                            		    });
                                 });
                             });
                         });
                     }
                 });
+
                 </script>
                 
             </div>
