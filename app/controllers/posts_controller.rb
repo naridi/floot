@@ -13,7 +13,7 @@ class PostsController < ApplicationController
         @post.user_id = current_user.id # Assign post to the user who created it.
         respond_to do |f|
             if (@post.save) 
-                f.html { redirect_to :back, :flash => { :success => "Posted! Your floot will disappear in 16 hours" } }
+                f.html { redirect_to :back, :flash => { :success => "Posted! Your floot will disappear in 24 hours." } }
             else
                 f.html { redirect_to :back, :flash => { :error => "Error: Post not saved." } }
             end
