@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
         has_many :posts, dependent: :destroy # remove user's posts if account is deleted
-         
+        
+        validates :username, format: { with: /\A[a-zA-Z0-9]+\Z/ }
         validates_uniqueness_of :username, :case_sensitive => false
         validates_presence_of :username
         validates_presence_of :name
